@@ -1,0 +1,25 @@
+.title  {
+    display: flex;
+    text-align: left;
+    padding-top: 40px;
+    padding-left: 40px;
+    border-bottom: 1px solid #302f2f;
+    margin-bottom: 10px;
+}
+
+.aleftcontainer {
+    position: absolute;
+    align-items: left;
+    top: 30%;
+    left: 5%;
+}
+
+.arightcontainer {
+    position: relative;
+    top: 30%;
+    left: 20%;
+}
+
+.separation {
+    margin: 40px 2px 2px 2px;
+}

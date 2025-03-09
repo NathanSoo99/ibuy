@@ -1,0 +1,78 @@
+Jonathan Cheng z5162084 Work Diary
+
+Week 1
+
+Group formed. Together with Frank and Yingdi, we setup the Jira accounts and allocated tasks to each member. Each of us wrote 4 user stories including the acceptance criteria. I also brainstormed wwith the team on our techstack, languages and interfaces that we can use for the project.
+
+Week 2
+
+This week we planned to finalise the user stories and sprints for our project. We allocated different parts of the proposal to our members. Yingdi was working on Background. Frank was finalising our user stories that we wrote in Week 1. I was responsible for completing a storyboard and interface diagram. Nathan joined our team and was responsible in completing the System Architecture diagram. Next week, our team aims to complete a draft of the proposal.
+
+Week 3
+
+This week we have achieved a draft of our proposal. Yingdi completed the background. Frank completed and finalised the user stories with the team. I have completed the storyboard via LucidCharts and Nathan completed the System Architecture diagram. By Week 3 Sunday, we aim to finalise the proposal for submission. In Week 4, we aim to start our first sprint with the backend and frontend.
+
+Week 4
+
+This week I have started to develop the front end with Nathan. The APIs have been set up. 
+
+Finished this week:
+- Setup multiple pages including (Home, Signup, Login, Accounts, Shopping Cart, Error 404)
+- Setup other components including (Navigation, Search Bar, Buttons)
+- Completed the initial sprint of login and register 
+- Successfully interfaced with the backend endpoints
+
+Technical Challenges
+I am quite new to React so the formatting was a bit of a problem but it got better as I progressively worked on it. Other sources that helped was Youtube and React document libraries.
+
+Next Week:
+Next week we aim to complete our Sprint 1 and be able to connect the front end to the backend. This will provide us with the basic setup of a working setup and this will be followed on with improvements in both the front end features and backend functionalities.
+
+Week 5
+
+Finished this week:
+- Successfully implemented the following pages and functionalities (Password reset, store wallet, admin account)
+- Successfully linked the user stories identified in Sprint 1 to the backend
+- Demonstrated Sprint 1 
+
+
+Week 6
+Flexibility Week
+
+Week 7
+
+Finished this week:
+- Successfully implemented redeeming codes, walletBalance persistency and upgraded the UI interface for the whole site
+- Worked on improving the UI by adding notifications when successfully redeeming gift codes
+
+Technical Challenges:
+- This week I wasn't able to configure the persistency for the wallet balance across the site. For examplem, when transitioning into another page, the walletBalance would turn to null or when logging in/out or refreshing, the walletBalance does not stay. This was resolved using the useContext hook and sessionStorage to ensure that the walletBalance was visible to the whole site.
+
+Week 8
+
+Finished this week:
+- Successfully implementing modifying account details, displaying wallet balance details across the site
+- Improvements to overall UI with React bootstrap and CSS styling
+- Modified the way we enter user details and interfaced with the backend
+
+Technical Challenges:
+- Came across an issue of uploading images for our products. I was not able to upload a jpg file directly due to format conflicts. I will have to look at other ways of sending this information to the backend
+- Difficulty in understanding the use of useContexts, dispatch and async functionalities. I was able to understand a bit more about how this works after going through various online documents and tutorials.
+
+Week 9
+
+Finished this week:
+- Successfully implemented viewing sales, adding products, editing products and viewing sales data
+- Improvements to overall UI/UX and completed end-to-end testing - elimiting any bugs
+
+Technical Challenges:
+- Difficulties with global variables and how they can be passed across multiple functions. One way to solve this was to use local session stored tokens
+- Difficulties on how to keep the product details in the form instead of having a blank form. Fixed it by pulling data from the database using useEffect hook
+- Still having challenges using CSS due to the large libraries, but getting a hang of it by going through more tutorials
+
+Week 10
+
+Finished this week:
+- Successfully implemented user referral codes which gives users additional credits if another user purchases products, completed recommendation system for both user and admin and finalised sales data
+- Able to scroll through recommended products using a image slider
+- Successfully implemented dynamic updates to the recommended slider system

@@ -1,0 +1,82 @@
+.dropdown-quantity {
+    background-color: white;
+    border: 1px solid black;
+    margin: 2px;
+
+    font-size: smaller;
+}
+
+.dropdown-quantity:hover {
+    background-color: rgb(204, 203, 203);
+}
+
+.dropdown-quantity:focus {
+    background-color: rgb(204, 203, 203);
+}
+
+.free-quantity-form {
+    display: inline;
+}
+
+.free-quantity {
+    border: none;
+    border-bottom: 1px solid black;
+    margin: 2px;
+
+    font-size: smaller;
+
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+.free-quantity:hover {
+    background-color: rgba(128, 128, 128, 0.144);
+}
+
+.free-quantity:focus {
+    background-color: rgba(128, 128, 128, 0.144);
+    outline: none;
+}
+
+#save-button {
+    font-size: smaller;
+}
+
+.functional-button {
+    color: white;
+    background-color: rgb(82, 100, 128);
+    border: 1px solid black;
+
+    padding-left: 2px;
+    padding-right: 2px;
+    margin: 2px;
+}
+
+.functional-button:hover {
+    color: #0d6efd;
+    background-color: rgba(128, 128, 128, 0.144);
+    border-color: gray;
+}
+
+.details-input {
+    background-color: rgba(128, 128, 128, 0.144);
+    margin: 2px;
+    margin-left: 4px;
+    margin-right: 20%;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.details-input:hover {
+    background-color: rgb(204, 203, 203);
+}
+
+.details-input:focus {
+    background-color: rgb(204, 203, 203);
+    outline: none;
+}
+
+.details-input:invalid {
+    border-radius: 1px;
+    outline: 2px solid rgba(255, 0, 0, 0.8);
+}

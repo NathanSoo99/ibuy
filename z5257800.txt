@@ -1,0 +1,54 @@
+Week 1
+Group tentaively formed. Issues with people dropping course means team is undersized for time being. I created
+a WebCMS group and Jira group and invited Steven + Jonno.
+
+Week 2
+Steven left the course, but Nathan joined mid-week so group is now proper size (Yingdi was always in group, but
+was absent from first tutorial). Invited the two of them to join WebCMS and Jira. I was also invited into
+a MSteams group to be used for project discussion by Yingdi . This week we tried to get all our user stories out, by
+splitting them into three groups of four stories (Nathan was not yet in group when we planned this). We
+shared these with each other and after getting feedback in the tutorial arranged a meeting for early next
+week.
+
+Week 3
+Start of the week we divided up the use cases to add to Jira (In reflection this might have been my solo job as
+scrum master). We kept working on coming up with novel use cases as this was still giving us trouble. We did
+decide on our tech stack, (we all agreed python would be the easiest backend language to work with). I took on the role
+of ensuring the user story section of the proposal was of high quality. This meant transferring and updating out all our existing
+user stories into the one document, as well as adding new ones. I also had to update our Jira and make sure all the
+stories were accurately recorded there. With approval from the group I created the 2-week sprint cycles and added
+tasks to the first sprint. Following the tutorial meeting I had a novel use case idea for an AI-assistant like 
+the Akinator game. As scrum master I submitted the proposal on behalf of the team.
+
+Week 4
+Worked with Yingdi to divide Jira tasks between us. I contributed a lot of code to the backend, including several auth
+routes (login,logout,register) the layout of the flask server file and the backend token system. I also led the decision
+to use a JSON backend over SQL (after realising how much easier that was). It was annoying that some of my commits
+weren't attributed to my git account but instead my zid (since I was pushing from CSE machine) but I fixed this when I realised.
+
+Week 5
+I continued to work through my tasks for the first sprint. This included functions to support changing account details,
+adding backend hashing to passwords (so that they weren't plain text) and adding email password reset. The email password
+reset was particularlly annoying since I implemented it twice thinking the first way didn't work (using Googles API). It turned out
+it worked, but was being caught by spam filters, so I switched back to that implementation and fixed that.
+
+Week 6
+Not much was done in quiet week by me aside from polishing up the reflection and submitting it. I did some planning on how to implement
+the recommendation system, but did not finish it as we had not finalised what data fields the backend would store for products.
+
+Week 7
+Another week in which I did not do too much work. This was due to other deadlines demanding my attention and my work rostering
+me on for too many shifts.
+
+Week 8
+I worked through my tasks on Jira and added the routes and functions that allow for credit cards to be added/deleted on the website and for
+shipping addresses to be added/modified/deleted. I also overhauled how gift codes worked to bring them more in line with other modern store fronts.
+This included making the codes get emailed to a user (rather than copied from the database) and only creating and deleting codes as needed. I also
+added functionality around paying with a customers wallet balance or their credit card. I also added a route for returning a customers balance.
+
+Week 9
+This week I launched into designing and implementing the recommender system. It required some redesigns to the data stored in accounts and the
+ways in which we track how clients use the website. This was considered in the design stage, but actually modified after I wrote the code
+that would use these changes to build up recommendation lists (so worked in reverse a little).
+
+Week 10

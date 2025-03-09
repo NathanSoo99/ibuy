@@ -1,0 +1,87 @@
+.lcontainer {
+    min-height: 500px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 0;
+    overflow: hidden;
+    
+    background: linear-gradient(
+        108deg,
+        rgb(63, 63, 65) 0%,
+        rgb(40, 40, 43) 100%
+    );
+    background-image: url("../../images/logoutBackground.jpeg");
+}
+
+.lformWrap   {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media screen and (max-width: 400px)    {
+        height: 80%;
+    }
+}
+
+.lformContent    {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    @media screen and (max-width: 400px)    {
+        padding: 10px;
+    }
+}
+
+.lformInput  {
+    padding: 16px 16px;
+    margin-bottom: 32px;
+    border: none;
+    border-radius: 4px;
+}
+
+.h1  {
+    color: rgb(255, 255, 255);
+    padding: 16px 16px;
+}
+
+.lform   {
+    background: #0f0f0f;
+    max-width: 400px;
+    height: auto;
+    width: 100%;
+    z-index: 1;
+    display: grid;
+    margin: 0 auto;
+    padding: 80px 32px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+    
+
+    @media screen and (max-width: 400px)    {
+        padding: 32px 32px;
+    }
+}
+
+.lformButton {
+    background: #ffffff;
+    padding: 16px 64px;
+    border: none;
+    border-radius: 40px;
+    color-adjust: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.lformHeader {
+    margin-bottom: 40px;
+    color:#fff;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}

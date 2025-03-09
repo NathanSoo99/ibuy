@@ -1,0 +1,454 @@
+swagger: "2.0"
+info:
+  description: "COMP3900 Ecommerce API"
+  version: "1.0.0"
+  title: "iBuy API"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "apiteam@swagger.io"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "petstore.swagger.io"
+basePath: "/v1"
+tags:
+- name: "Auth"
+  description: "Operations relating to authentication"
+- name: "User"
+  description: "Operations relating to user account management"
+- name: "Items"
+  description: "Operations relating to items"
+- name: "Cart"
+  description: "Operations relating to shopping cart"
+schemes:
+- "https"
+- "http"
+paths:
+  /auth/register:
+    post:
+      tags:
+      - "Auth"
+      summary: "As a user, I want to create login details, so that I can register a new account."
+      parameters:
+      - in: "body"
+        description: "Information required to create a new account"
+        name: "Registration Details"
+        schema:
+          $ref: "#/definitions/Register"
+      responses:
+        201:
+          description: "New Account Created"
+        409:
+          description: "Email Already in Use"
+  /auth/login:
+    post:
+      tags:
+      - "Auth"
+      summary: "As a user, I want to enter my login details, so that I can login to my account"
+      parameters:
+      - in: body
+        description: "Information required for login"
+        name: "Login Credentials"
+        schema:
+          $ref: "#/definitions/Login"
+      responses:
+        200:
+          description: "Login Successful"
+          schema:
+            type: "string"
+        401:
+          description: "Login Denied"
+  /auth/logout:
+    post:
+      tags:
+      - "Auth"
+      summary: "End the user's login session."
+      responses:
+        200:
+          description: "Logout Succesful"
+        403:
+          description: "Forbidden"
+  /auth/passwordreset/request:
+    post:
+      tags:
+      - "Auth"
+      summary: "As a User, I want to reset my password via email, so that I can recover my account if I forget my password"
+      responses:
+        200:
+          description: "OK"
+  /auth/passwordreset/reset:
+    post:
+      tags:
+      - "Auth"
+      summary: "Attempt to reset password with reset code."
+      parameters:
+      - in: "body"
+        description: "Information required to reset password"
+        name: "Reset Information"
+        schema:
+          $ref: "#/definitions/Reset"
+      responses:
+        200:
+          description: "Password Reset Successful"
+        401:
+          description: "Password Reset Denied"
+  /user/details/{token}:
+    get:
+      tags:
+      - "User"
+      summary: "Get user details."
+      parameters:
+      - in: "path"
+        name: "token"
+        type: "string"
+        required: true
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: "#/definitions/User"
+        401:
+          description: "Invalid/Expired Token"
+  /user/details/setemail:
+    put:
+      tags:
+      - "User"
+      summary: "As a User, I want to be able to modify account details (email), so that I can update my personal information."
+      parameters:
+        - in: "body"
+          name: "Email Update Information"
+          description: "Information required to update email"
+          schema:
+            $ref: "#/definitions/EmailUpdate"
+      responses:
+        200:
+          description: "Updated"
+        401:
+          description: "Invalid/Expired Token"
+        409:
+          description: "Email Already in Use"
+  /user/details/setname:
+    put:
+      tags:
+      - "User"
+      summary: "As a User, I want to be able to modify account details (name), so that I can update my personal information."
+      parameters:
+        - in: "body"
+          name: "Name Update Information"
+          description: "Information required to update name"
+          schema:
+            $ref: "#/definitions/NameUpdate"
+      responses:
+        200:
+          description: "Updated"
+        401:
+          description: "Invalid/Expired Token"
+  /user/details/setpassword:
+    put:
+      tags:
+      - "User"
+      summary: "As a User, I want to be able to modify account details (password), so that I can update my personal information."
+      parameters:
+        - in: "body"
+          name: "Password Update Information"
+          description: "Information required to update password"
+          schema:
+            $ref: "#/definitions/PasswordUpdate"
+      responses:
+        200:
+          description: "Updated"
+        401:
+          description: "Invalid/Expired Token or Password"
+  /user/wallet/{token}:
+    get:
+      tags:
+      - "User"
+      summary: "Get the user's wallet balance"
+      parameters:
+        - in: "path"
+          name: "token"
+          type: "string"
+          required: true
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: "#/definitions/Balance"
+        401:
+          description: "Invalid/Expired Token"
+  /user/wallet/giftcode:
+    post:
+      tags:
+      - "User"
+      summary: "As a User, I want to redeem gift codes on my account so that I can keep store credit for future purchases."
+      parameters:
+        - in: "body"
+          name: "Gift Redemption Information"
+          description: "Information required to redeem gift code"
+          schema:
+            $ref: "#/definitions/Redeem"
+      responses:
+        200:
+          description: "Gift Code Redeemed"
+        401:
+          description: "Invalid/Expired Token"
+        409:
+          description: "Invalid Gift Code"
+  /user/referralcode/{token}:
+    get:
+      tags:
+      - "User"
+      summary: "As a User, I want to have a referral system for my friends, so that I can be rewarded for bringing the store more customers."
+      parameters:
+        - in: "path"
+          name: "token"
+          type: "string"
+          required: true
+      responses:
+        200:
+          description: "Link Retrieved"
+          schema:
+            $ref: "#/definitions/ReferralLink"
+        401:
+          description: "Invalid/Expired Token"
+  /items:
+    post:
+      tags:
+      - "Items"
+      summary: "As an admin, I want to add products with details, so that I can sell my products on the website."
+      parameters:
+        - in: "body"
+          name: "Product Information"
+          description: "Details relating to the product"
+          schema:
+            $ref: "#/definitions/ItemDetails"
+      responses:
+        201:
+          description: "Product Created"
+        401:
+          description: "Invalid/Expired Token"
+        403:
+          description: "Unauthorized User"
+    put:
+      tags:
+      - "Items"
+      summary: "As an admin, I want to view or edit the products so that I can sell my products on the website."
+      parameters:
+        - in: "body"
+          name: "Product Information"
+          description: "Details relating to the product"
+          schema:
+            $ref: "#/definitions/ItemDetails"
+      responses:
+        200:
+          description: "Product Information Updated"
+  /items/{id}:
+    get:
+      tags:
+      - "Items"
+      summary: "As a User, I want to be able to see a particular products detailed information, so that I can make more informed purchasing decisions."
+      parameters:
+        - in: "path"
+          name: "id"
+          type: "integer"
+          description: "Product Id"
+          required: true
+      responses:
+        200:
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ItemDetails"
+        404:
+          description: "Product Not Found"
+  /cart:
+    post:
+      tags:
+      - "Cart"
+      summary: "As a user I want to add products to the shopping cart so that I generate a list of items to purchase"
+      parameters:
+        - in: "body"
+          name: "Shopping Cart Item Details"
+          description: "User Authorization and Identifier and Quantity for product to be added to cart"
+          schema:
+            $ref: "#/definitions/CartItem"
+      responses:
+        200:
+          description: "Item Successfully Added"
+        401:
+          description: "Invalid/Expired Token"
+        404:
+          description: "Item Not Found"
+    put:
+      tags:
+      - "Cart"
+      summary: "Edit items in shopping cart"
+      parameters:
+        - in: "body"
+          name: "Shopping Cart Item Details"
+          description: "User Authorization and Identifier and Quantity for product to be added to cart"
+          schema:
+            $ref: "#/definitions/CartItem"
+      responses:
+        200:
+          description: "Item Successfully Modified"
+        401:
+          description: "Invalid/Expired Token"
+        404:
+          description: "Item Not Found"
+        409:
+          description: "Item not in shopping Cart"
+  /cart/{token}:
+    get:
+      tags:
+      - "Cart"
+      summary: "Get a list of all items in the shopping cart"
+      parameters:
+        - in: "path"
+          name: "token"
+          type: "string"
+          required: true
+      responses:
+        200:
+          description: "Shopping Cart Retrieved"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/CartItem"
+        401:
+          description: "Invalid/Expired Token"
+    delete:
+      tags:
+      - "Cart"
+      summary: "As a user, I want to modify the products within the shopping cart, so that I can remove/add items if I change my mind."
+      parameters:
+        - in: "path"
+          name: "token"
+          type: "string"
+          required: true
+        - in: "query"
+          name: "Item Id"
+          type: "integer"
+      responses:
+        200:
+          description: "Item removed from shopping cart"
+        401:
+          description: "Invalid/Expired Token"
+        404:
+          description: "Item not found"
+        409:
+          description: "Item not in shopping cart"
+definitions:
+  Register:
+    type: "object"
+    properties:
+      email:
+        type: "string"
+        description: "user's email which also serves as the username and unique identifier"
+      firstName:
+        type: "string"
+        description: "user's first name which has a maximum of (_) characters"
+      lastName:
+        type: "string"
+        description: "user's last name which has a maximum of (_) characters"
+      hashedPassword:
+        type: "string"
+        description: "user's password which has been hashed by the frontend"
+      referralCode:
+        type: "integer"
+        description: "optional referral code"
+  Login:
+    type: "object"
+    properties:
+      email:
+        type: "string"
+        description: "user's email used when acount was registered"
+      hashedPassword:
+        type: "string"
+        description: "user's password which has been hashed by the frontend"
+  Reset:
+    type: "object"
+    properties:
+      resetCode:
+        type: "integer"
+        description: "reset code which the user has received via email"
+      hashedPassword:
+        type: "string"
+        description: "user's new password which has been hashed by the frontend"
+  User:
+    type: "object"
+    properties:
+      email:
+        type: "string"
+      firstName:
+        type: "string"
+      lastName:
+        type: "string"
+  EmailUpdate:
+    type: "object"
+    properties:
+      token:
+        type: "string"
+      email:
+        type: "string"
+  NameUpdate:
+    type: "object"
+    properties:
+      token:
+        type: "string"
+      firstName:
+        type: "string"
+      lastName:
+        type: "string"
+  PasswordUpdate:
+    type: "object"
+    properties:
+      token:
+        type: "string"
+      currentHashedPassword:
+        type: "string"
+      newHashedPassword:
+        type: "string"
+  Balance:
+    type: "object"
+    properties:
+      balance:
+        type: "number"
+        format: "double"
+  Redeem:
+    type: "object"
+    properties:
+      token:
+        type: "string"
+      giftCode:
+        type: "string"
+  ReferralLink:
+    type: "object"
+    properties:
+      link:
+        type: "string"
+  ItemDetails:
+    type: "object"
+    properties:
+      price:
+        type: "number"
+        format: "double"
+      stock:
+        type: "integer"
+      details:
+        type: "string"
+      categories:
+        type: "array"
+        items:
+          type: "string"
+  CartItem:
+    type: "object"
+    properties:
+      token:
+        type: "string"
+      itemId:
+        type: "integer"
+      quantity:
+        type: "integer"
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"

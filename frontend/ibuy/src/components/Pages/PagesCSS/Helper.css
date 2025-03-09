@@ -1,0 +1,90 @@
+.open-button {
+    position: fixed;
+    z-index: 1;
+    right: 2%;
+    bottom: 2%;
+}
+
+.chat-window {
+    border: 1px solid black;
+    position: fixed;
+    z-index: 1;
+    right: 2%;
+    bottom: 2%;
+
+    background-color: white;
+    height: 40%;
+    width: 30%;
+    border-radius: 3px;
+}
+
+.chat-header {
+    border-bottom: 1px solid black;
+    height: 8%;
+    display: grid;
+    grid-template-columns: 90% 10%;
+}
+
+.chat-history {
+    border: 1px solid black;
+    height: 80%;
+    overflow-y: auto;
+}
+
+.chat-input {
+    border: 1px solid black;
+    display: grid;
+    height: 12%;
+}
+
+.message-input {
+    border: 1px solid black;
+    margin: 1px;
+    grid-column-start: 1;
+}
+
+.message-submit {
+    grid-column-start: 2;
+}
+
+.exit-button {
+    font-size: large;
+    color: black;
+    margin: auto;
+    padding: 2px;
+}
+
+.exit-button:hover {
+    background-color: rgb(204, 203, 203);
+    outline: 2px solid rgb(204, 203, 203);
+}
+
+.incoming-message {
+    background-color: rgb(204, 203, 203);
+    padding: 3%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 2%;
+    margin-right: auto;
+    width: 55%;
+
+    border-radius: 14px 14px 14px 4px;
+}
+
+.outgoing-message {
+    color: white;
+    background-color: #0d6efd;
+    padding: 3%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: auto;
+    margin-right: 2%;
+    width: 55%;
+
+    border-radius: 14px 14px 4px 14px;
+}
+
+
+.recommended-image {
+    width: 100%;
+}

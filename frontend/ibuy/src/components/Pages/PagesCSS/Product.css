@@ -1,0 +1,31 @@
+.purchasePage {
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+.itemInformation {
+    text-align: left;
+    padding: 2%;
+
+    grid-column-start: 1;
+}
+
+.purchasePanel {
+    border: 2px solid black;
+    margin: 5% 5% 5% 5%;
+    padding: 2px;
+
+    grid-column-start: 2;
+}
+
+.quantitySelect {
+    display: inline;
+}
+
+.addButton {
+    border: 1px solid black;
+    margin: 2px 2px 2px auto;
+
+    display: block;
+    justify-self: center;
+}

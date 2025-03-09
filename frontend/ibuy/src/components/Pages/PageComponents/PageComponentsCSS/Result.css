@@ -1,0 +1,21 @@
+.result {
+    height: 12vh;
+    margin-top: 2px;
+    margin-bottom: 2px;
+
+    border: 1px solid black;
+    border-radius: 5px;
+
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.nameLink {
+    margin: 2px 2px 2px 2px;
+    text-align: left;
+}
+
+.priceTag {
+    margin: 2px 2px 2px 2px;
+    text-align: right;
+}

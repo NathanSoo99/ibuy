@@ -1,0 +1,53 @@
+.checkoutPage {
+    display: grid;
+
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.checkout-page-label {
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+.delivery-window {
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+.billing-window {
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+.cart-window {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+}
+
+.payment-window {
+    grid-column-start: 3;
+    grid-row-start: 2;
+}
+
+.order-panel {
+    border: 1px solid black;
+
+    grid-column-start: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.payment-selector {
+    margin: 2px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+.payment-selector:hover {
+    background-color: rgb(204, 203, 203);
+}
+
+.payment-selector:focus {
+    background-color: rgb(204, 203, 203);
+}

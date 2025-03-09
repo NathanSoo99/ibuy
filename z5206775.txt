@@ -1,0 +1,34 @@
+Week 1
+- Learnt JavaScript, started learning CSS.
+Week 2
+- Moved to this group.
+- Continued learning CSS.
+Week 3
+- Worked on the system architecture diagram for the project proposal.
+Week 4
+- Created basic ER diagram
+- Finished Learning CSS
+- Created swagger API documentation
+- Learnt Basic React
+- Finished Frontend Page Structure for Password Reset Request and Password Reset Submit Pages
+Week 5
+- Finished Frontend Page Structure for Shopping Cart, Checkout and Search Pages
+Week 6
+- Added More Endpoints to Swagger API Documentation (payment methods, addresses, orders)
+- Finished Frontend Page Structure for Product Page
+- Added Search Bar
+Week 7
+- Worked on Address and Card Handling
+- Started Connecting Frontend to Backend for Cart
+- Added some basic css
+Week 8
+- Finished Connecting Frontend to Backend for Search, Checkout and Cart.
+- Finished Address and Card Handling
+Week 9
+- AI Staff Helper Frontend
+- Style for Checkout, Cart and AI Staff Helper
+- Form Validation and Quality of Life
+Week 10
+- Minor Quality of Life Improvements (Form Validation, Cart Images, Page Blocking)
+- Cart Bugfixes
+- AI Staff Helper

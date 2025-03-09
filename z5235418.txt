@@ -1,0 +1,60 @@
+Week 1
+Group formed with 3 people
+
+Week 2
+Nathan joined our group
+Met at Team
+Formed epic story and the first series of user stories
+
+
+Week 3
+For me:
+Worked on the background for the proposal
+Added and completed user stories on Jira
+Added story points
+Prepared for the knowledge that are needed for sprint 1
+
+For our group:
+Finished proposal
+
+Week 4
+For me:
+add add product, view product and edit product function
+add view product and add product function
+add edit products functions
+add simple functions for displaying products
+
+For our group:
+Working for sprint 1
+
+Week 5:
+add function for searching
+add user wallet function
+add gift code system
+add shopping cart function
+
+
+Week 6:
+Flexible week
+
+Week 7:
+return wallet balance
+complete add product
+
+
+Week 8:
+manage to transform pictures to the frontend and store pictures
+
+Week 9:
+modify search so that it is case-sensitive
+add list for product categories
+start to work on place order function, user referral system, admin recommend product system and view sales data function
+
+Week 10:
+complete place order function, user referral system, admin recommend product system and view sales data function
+write project report
+add comment
+
+
+
+

@@ -1,0 +1,29 @@
+.cartPage {
+    display: grid;
+    grid-template-columns: 80% 20%;
+}
+
+.title {
+    grid-column-start: 1;
+}
+
+.cart-panel {
+    grid-column-start: 1;
+}
+
+.checkout-panel {
+    border: 1px solid black;
+    margin: 2%;
+    padding: 2%;
+
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+.subtotal {
+    font-weight: bold;
+}
+
+#checkout-link {
+    text-decoration: none;
+}

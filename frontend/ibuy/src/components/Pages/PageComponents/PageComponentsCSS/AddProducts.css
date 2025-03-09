@@ -1,0 +1,10 @@
+.container  {
+    width: 40%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    margin-top: 100px;
+    align-items: center;
+}
+
